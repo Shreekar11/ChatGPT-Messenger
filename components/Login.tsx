@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="bg-[#11A37F] h-screen flex flex-col items-center justify-center text-center">
-      <Image src="/logo.svg" width={300} height={300} alt="Logo" />
+      {/* <Image src="/logo.svg" width={300} height={300} alt="Logo" /> */}
       <button
         onClick={handleGoogleSignIn}
         className="text-white font-bold text-3xl animate-pulse"

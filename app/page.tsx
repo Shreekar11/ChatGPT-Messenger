@@ -1,20 +1,14 @@
 "use client";
 
+import React from "react";
 import {
   BoltIcon,
   ExclamationTriangleIcon,
   SunIcon,
 } from "@heroicons/react/24/outline";
-import { useAuth } from "../context/Auth";
-import { useRouter } from "next/navigation";
+import isAuth from "../context/isAuth";
 
-function HomePage() {
-  const router = useRouter();
-  const auth =
-    typeof window !== "undefined" ? !!localStorage.getItem("user") : "";
-  if (!auth) {
-    router.push("/login");
-  }
+const HomePage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center text-white h-screen px-2">
@@ -75,4 +69,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default isAuth(HomePage);
